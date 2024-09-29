@@ -107,7 +107,9 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src="https://media.istockphoto.com/id/1399065815/video/particle-plasma-burst-on-black-background.mp4?s=mp4-640x640-is&k=20&c=-ik-_rEbOxWqqrgznQvOSLHmPLaolkTlQmpO3lKljGk="
+            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/Samarth+hathi+mba+2nd+year.mp4
+
+"
             autoPlay
             loop
             muted
@@ -126,7 +128,8 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src="https://videosforuyp.s3.ap-south-1.amazonaws.com/1700639054923524.MP4?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA8aCmFwLXNvdXRoLTEiRzBFAiEA%2BYqaBB2I67F4sucD5WoRfsS9%2BaMHS9lMJJhgf7OCSVoCIAFY31jJu8XFusmbEVYb7fQI84rb2B74iD7o3inlXLgQKv0CCFgQABoMMDIxODkxNTg2MTc5IgxeVGe4QkPcxNZySCwq2gJJXxpsoAxyl112lAz7MiCUsy8w%2FE1Mk7v4FZ1CurLJy%2BTFABky8okUIrnvrzjpd3HdE1v6ROZoGMYhM%2B8%2F8XXFWAqmsFobCJTnPqYzcZauTYOxLvQKZmNdKunQyDE2F3jBmzHccLJ%2FffgA%2FHxNzQKi%2F8wXIdliZuGlBEV6mn76xBhgJZ5vw%2Fsm6a6XpRfXK49i%2BHOhH1u1NwFMfYhsVDHj6V6s4GsFpe9ge%2F%2Bf8L691FIbC27gCvEydO7EK2VySFuIe7KVsi05fS06kdlnOcl0Q9pvobmTbeEeijm2%2FpwOdDnukIRIxpFFTijhal7z9fWKIUY5K0JVVAieOYQzdQp0Aa42NWhPXF%2BKxJ1%2Fdm%2FtHjXYa83b%2B5VUKWcYW1d0YcnQb%2Fhh5kuhTgIga3y1Hy%2BMsH85wNg3BciUVlqo5wwQUS3hj1Kah%2FygSY5cuOgcg09Vt9h9AcO%2FWrDcMLXr47cGOrMCA%2Fwijcj%2B0ShB%2BcLECsmUiJgfGuugXxGOlq83nAYvtOJC4S8G0l04wLXS7mKLQYLmq%2BCCkDGJfypC9Gl4YmIXB%2FDEmgWQF1xfiY9%2BR5BHdR1wWlLVQXDxBnWR0wM4vhR7FVyu6Da%2FVnoZezxNr0JVQiEsa8Oy6NhKK2hsl54mkH2LlJs9YigHxR7FEIpweNWeI7rzORdqmlsvxQ%2BvwCtqd1b7TuVuyT00FqmTMY4bdzSOIyXD6uUfgP4PxwppksL5dArEmVlnfkCoapd%2BZyHnJmrhQ5W8Zbiq%2FEQQeiY6xvgNm1qs2jTJoTvrU0ynjMCrIFv8jjFGZ8oiNDguDYbiGZ8sMhbe6HSY2XWQANLq7FucmDrAiDRmvkJlmbteNvUsULvLvu4FawhXVuDj5Us5N0qBsA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240929T170122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43200&X-Amz-Credential=ASIAQKGGXDCB6B72QBCF%2F20240929%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=39606ff0ffad475d3396381308df041b73555d2251b4fb3d0c89b616d547d459"
+            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700639054923524.MP4
+"
             autoPlay
             loop
             muted
@@ -145,7 +148,8 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src="https://media.istockphoto.com/id/1399065815/video/particle-plasma-burst-on-black-background.mp4?s=mp4-640x640-is&k=20&c=-ik-_rEbOxWqqrgznQvOSLHmPLaolkTlQmpO3lKljGk="
+            src=" https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700642024611536.MP4
+"
             autoPlay
             loop
             muted
