@@ -1,0 +1,15 @@
+.members-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff4e6;
+    color: #d35400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .members-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  

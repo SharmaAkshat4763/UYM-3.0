@@ -1,0 +1,15 @@
+.videos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe0e0;
+    color: #e74c3c;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .videos-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  

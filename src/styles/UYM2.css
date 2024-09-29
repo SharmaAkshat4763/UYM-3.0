@@ -1,0 +1,15 @@
+.uym2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .uym2-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
