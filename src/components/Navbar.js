@@ -35,7 +35,7 @@ function Navbar() {
               <Link to="/videos">Videos</Link>
             </div>
           </li>
-          <li><Link to="/news">NEWS</Link></li>
+          <li><Link to="/news">COMMITTEES</Link></li>
           <li><Link to="/support">SUPPORT</Link></li>
           <li className="dropdown">
             <button className="dropbtn">SOCIALS</button>
