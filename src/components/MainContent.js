@@ -1,31 +1,78 @@
-import React from 'react';
-
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { useInView } from 'react-intersection-observer'; // Import useInView for scroll animations
-import '../styles/MainContent.css'; // Ensure you create this file for styling
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import { useInView } from 'react-intersection-observer'; 
+import '../styles/MainContent.css';
 
 function MainContent() {
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
+  
+  // State to manage mute/unmute for each video
+  const [isMuted, setIsMuted] = useState({
+    firstVideo: true,
+    secondVideo: true,
+    thirdVideo: true,
+  });
 
-  const handleRegisterClick = () => {
-    navigate('/register'); // Navigate to the Register page when button is clicked
-  };
+  // Refs for each video element to control play/pause
+  const firstVideoRef = useRef(null);
+  const secondVideoRef = useRef(null);
+  const thirdVideoRef = useRef(null);
 
-  // Create refs to track if the sections are in view
+  // Intersection Observer for each section
   const { ref: firstSectionRef, inView: isFirstSectionVisible } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
   });
-
+  
   const { ref: secondSectionRef, inView: isSecondSectionVisible } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
   });
-
+  
   const { ref: thirdSectionRef, inView: isThirdSectionVisible } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
   });
+
+  // Function to toggle mute/unmute for each video
+  const handleMuteToggle = (videoKey) => {
+    setIsMuted((prevState) => ({
+      ...prevState,
+      [videoKey]: !prevState[videoKey],
+    }));
+  };
+
+  // Play or pause videos based on the section in view
+  useEffect(() => {
+    const playVideo = (videoRef) => {
+      if (videoRef.current && videoRef.current.paused) {
+        videoRef.current.play().catch(() => {
+          console.log("Error playing video");
+        });
+      }
+    };
+
+    const pauseVideo = (videoRef) => {
+      if (videoRef.current && !videoRef.current.paused) {
+        videoRef.current.pause();
+      }
+    };
+
+    if (isFirstSectionVisible) {
+      playVideo(firstVideoRef);
+      pauseVideo(secondVideoRef);
+      pauseVideo(thirdVideoRef);
+    } else if (isSecondSectionVisible) {
+      pauseVideo(firstVideoRef);
+      playVideo(secondVideoRef);
+      pauseVideo(thirdVideoRef);
+    } else if (isThirdSectionVisible) {
+      pauseVideo(firstVideoRef);
+      pauseVideo(secondVideoRef);
+      playVideo(thirdVideoRef);
+    }
+  }, [isFirstSectionVisible, isSecondSectionVisible, isThirdSectionVisible]);
+
+  const handleRegisterClick = () => {
+    navigate('/register');
+  };
 
   return (
     <div>
@@ -39,12 +86,19 @@ function MainContent() {
           className="background-video"
         ></video>
         <div className="overlay-content">
-          <h1>United Youth Parliament <span className='red'>3.0</span></h1>
-          <p><span className='white'>Platform where students, dressed as politicians, engage in debates and discussions, simulating real-world political scenarios.</span></p>
-          <button className="cta-button" onClick={handleRegisterClick}>Register Now</button>
+          <h1>United Youth Parliament <span className="red">3.0</span></h1>
+          <p>
+            <span className="white">
+              Platform where students, dressed as politicians, engage in debates and discussions, simulating real-world political scenarios.
+            </span>
+          </p>
+          <button className="cta-button" onClick={handleRegisterClick}>
+            Register Now
+          </button>
         </div>
       </div>
-      
+
+
       {/* Latest News Section */}
       <div className="latest-news-section">
         <h2 className="section-title">The Latest</h2>
@@ -97,8 +151,9 @@ function MainContent() {
         </div>
       </div>
 
+
       {/* Valorant Section with Video */}
-      <div className={`new-section valorant-section ${isFirstSectionVisible ? 'animate-section' : ''}`} ref={firstSectionRef}>
+      <div className="new-section valorant-section" ref={firstSectionRef}>
         <div className="valorant-content">
           <h2>We Are United Youth Parliament</h2>
           <p>
@@ -107,19 +162,20 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/Samarth+hathi+mba+2nd+year.mp4
-
-"
-            autoPlay
+            ref={firstVideoRef}
+            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/Sequence+01_2.mp4"
             loop
-            muted
+            muted={isMuted.firstVideo}
             className="valorant-background-video"
           ></video>
+          <button className="mute-button" onClick={() => handleMuteToggle('firstVideo')}>
+            {isMuted.firstVideo ? 'Unmute' : 'Mute'}
+          </button>
         </div>
       </div>
 
       {/* Defy the Limits Section */}
-      <div className={`new-section valorant-section ${isSecondSectionVisible ? 'animate-section' : ''}`} ref={secondSectionRef}>
+      <div className="new-section valorant-section" ref={secondSectionRef}>
         <div className="valorant-content">
           <h2>Defy the Limits</h2>
           <p>
@@ -128,18 +184,20 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700639054923524.MP4
-"
-            autoPlay
+            ref={secondVideoRef}
+            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700639054923524.MP4"
             loop
-            muted
+            muted={isMuted.secondVideo}
             className="valorant-background-video"
           ></video>
+          <button className="mute-button" onClick={() => handleMuteToggle('secondVideo')}>
+            {isMuted.secondVideo ? 'Unmute' : 'Mute'}
+          </button>
         </div>
       </div>
 
       {/* Join the Fight Section */}
-      <div className={`new-section valorant-section ${isThirdSectionVisible ? 'animate-section' : ''}`} ref={thirdSectionRef}>
+      <div className="new-section valorant-section" ref={thirdSectionRef}>
         <div className="valorant-content">
           <h2>Join the Fight</h2>
           <p>
@@ -148,13 +206,15 @@ function MainContent() {
         </div>
         <div className="valorant-video">
           <video
-            src=" https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700642024611536.MP4
-"
-            autoPlay
+            ref={thirdVideoRef}
+            src="https://videosforuyp1.s3.ap-south-1.amazonaws.com/1700642024611536.MP4"
             loop
-            muted
+            muted={isMuted.thirdVideo}
             className="valorant-background-video"
           ></video>
+          <button className="mute-button" onClick={() => handleMuteToggle('thirdVideo')}>
+            {isMuted.thirdVideo ? 'Unmute' : 'Mute'}
+          </button>
         </div>
       </div>
     </div>
